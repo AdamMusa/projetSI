@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} <br>
+<div class="container-fluide">
+    {% for article in article %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/profil_route.jpg' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title">{{article.title}}</h5>
+                    <p class="card-text">{{article.content}}</p>
+                </div>
+            </div>
+        </div><br>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/profil_route.jpg' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title">{{article.title}}</h5>
+                    <p class="card-text">{{article.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<nav>
+    <ul class="pager">
+        {% if article.has_previous %}
+        <li><a href="?page={% url 'article:article' %}"></a>Precedent</li>
+        {% endif %}
+        {% if article.has_next %}
+        <li><a href="?page={% url 'article:article' %}"></a>Suivant</li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endblock content %}

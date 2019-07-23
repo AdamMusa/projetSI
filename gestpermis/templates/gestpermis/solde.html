@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %} <br>
+{% for solde in solde %}
+<div class="card text-center">
+    <div class="card-header">
+        Info sur le capital point
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Votre capital point est : {{solde.point}}</h5>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+       {{solde.add_at}}
+    </div>
+</div>
+
+{% endfor %}
+{% endblock content %}
